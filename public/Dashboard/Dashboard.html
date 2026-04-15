@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../Home/home.css" />
+  </head>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+  <body>
+    <div class="container">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="logo">
+          <img src="../images/logo.png" />
+          <h2>FI Planner</h2>
+        </div>
+
+        <ul class="menu">
+          <li class="active">
+            <a href="dashboard.html">
+              <img src="../images/icons8-home-64.png" />
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="fi.html">
+              <img src="../images/icons8-calendar-100.png" />
+              <span>Mục tiêu FI</span>
+            </a>
+          </li>
+
+          <li>
+            <img src="../images/icons8-briefcase-100 2.png" />
+            <span>Thu nhập</span>
+          </li>
+
+          <li>
+            <img src="../images/icons8-receipt-96.png" />
+            <span>Chi tiêu</span>
+          </li>
+
+          <li>
+            <img src="../images/iccons8-debt-642.png" />
+            <span>Nợ</span>
+          </li>
+        </ul>
+
+        <div class="user">
+          <button class="back-btn" onclick="goBack()">← Quay lại</button>
+        </div>
+      </div>
+
+      <!-- MAIN -->
+      <div class="main">
+        <h2>Dashboard</h2>
+
+        <!-- SUMMARY -->
+        <div class="summary">
+          <div class="box">
+            <span>Thu nhập</span>
+            <h3>20,000,000 VND</h3>
+          </div>
+
+          <div class="box">
+            <span>Chi tiêu</span>
+            <h3>8,500,000 VND</h3>
+          </div>
+
+          <div class="box">
+            <span>Nợ</span>
+            <h3>15,234,000 VND</h3>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="dash-content">
+          <!-- LEFT -->
+          <div class="left">
+            <div class="progress-card">
+              <p>Tiến độ FI: <span class="green">35%</span></p>
+
+              <div class="bar">
+                <div class="fill"></div>
+              </div>
+
+              <div class="info-row">
+                <span>Thời gian đạt mục tiêu: 20/5/2030</span>
+                <span>Đã tiết kiệm: 5,126,000 / 1,800,000,000</span>
+              </div>
+            </div>
+
+            <div class="charts">
+              <div class="chart-box">Biểu đồ thu nhập</div>
+              <div class="chart-box">Dự đoán FI</div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="right">
+            <h4>Giao dịch gần đây</h4>
+
+            <div class="transaction">
+              Lương <span class="plus">+20,000,000</span>
+            </div>
+            <div class="transaction">
+              Tiền thưởng <span class="plus">+5,000,000</span>
+            </div>
+            <div class="transaction">
+              Ăn uống <span class="minus">-1,500,000</span>
+            </div>
+            <div class="transaction">
+              Thu nợ <span class="minus">-3,000,000</span>
+            </div>
+            <div class="transaction">
+              Cổ tức <span class="plus">+5,000,000</span>
+            </div>
+            <div class="transaction">
+              Làm thêm <span class="plus">+1,500,000</span>
+            </div>
+            <div class="transaction">
+              Mua sắm <span class="minus">-1,800,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

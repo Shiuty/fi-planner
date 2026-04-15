@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register - FI Planner</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <script>
+    function goRegister() {
+      window.location.href = "login.html";
+    }
+  </script>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <h2>Đăng ký</h2>
+        <p>Tạo tài khoản mới ngay</p>
+
+        <input type="text" placeholder="Họ và tên" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Mật khẩu" />
+        <input type="password" placeholder="Xác nhận mật khẩu" />
+
+        <button type="button" class="btn-main" onclick="goRegister()">
+          Đăng ký
+        </button>
+
+        <p class="extra">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+      </div>
+    </div>
+  </body>
+</html>

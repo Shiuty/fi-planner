@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard - FI Planner</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <script>
+    function goFIGoal() {
+      window.location.href = "../FI Goal/fi.html";
+    }
+  </script>
+  <body>
+    <div class="container">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="logo">
+          <img src="../images/logo.png" />
+          <h2>FI Planner</h2>
+        </div>
+
+        <ul class="menu">
+          <li>
+            <a href="../Dashboard/dashboard.html">
+              <img src="../images/icons8-home-64.png" />
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="../FI Goal/fi.html">
+              <img src="../images/icons8-calendar-100.png" />
+              <span>Mục tiêu FI</span>
+            </a>
+          </li>
+
+          <li>
+            <img src="../images/icons8-briefcase-100 2.png" />
+            <span>Thu nhập</span>
+          </li>
+
+          <li>
+            <img src="../images/icons8-receipt-96.png" />
+            <span>Chi tiêu</span>
+          </li>
+
+          <li>
+            <img src="../images/iccons8-debt-642.png" />
+            <span>Nợ</span>
+          </li>
+        </ul>
+
+        <div class="user">
+          <img src="../images/avatar.png" />
+          <p>Nguyễn Văn A</p>
+        </div>
+      </div>
+
+      <!-- MAIN -->
+      <div class="main">
+        <div class="topbar">
+          <img src="../images/icons8-setting-94.png" />
+          <span>Setting</span>
+        </div>
+
+        <div class="cards">
+          <!-- FI -->
+          <div class="card green">
+            <div class="card-text">
+              <h3>Mục tiêu FI</h3>
+              <h1>1,800,000,000 VND</h1>
+              <p>Tiến độ đạt mục tiêu</p>
+              <span>36% Đã đạt mục tiêu</span>
+              <div class="progress"></div>
+              <button class="btn green-btn" onclick="goFIGoal()">
+                Xem chi tiết >
+              </button>
+            </div>
+            <img src="../images/mucTieu.png" />
+          </div>
+
+          <!-- INCOME -->
+          <div class="card">
+            <div class="card-text">
+              <h3>Thu nhập</h3>
+              <h1>83,320,000 VND</h1>
+              <p>Tổng thu nhập</p>
+              <button class="btn blue-btn">Xem chi tiết ></button>
+            </div>
+            <img src="../images/icoming.png" />
+          </div>
+
+          <!-- EXPENSE -->
+          <div class="card">
+            <div class="card-text">
+              <h3>Chi tiêu</h3>
+              <h1>35,654,000 VND</h1>
+              <p>Tổng chi tiêu tháng này</p>
+              <button class="btn purple-btn">Xem chi tiết ></button>
+            </div>
+            <img src="../images/expenses.png" />
+          </div>
+
+          <!-- DEBT -->
+          <div class="card">
+            <div class="card-text">
+              <h3>Nợ</h3>
+              <h1>15,234,000 VND</h1>
+              <p>Tổng nợ</p>
+              <button class="btn red-btn">Xem chi tiết ></button>
+            </div>
+            <img src="../images/debt.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
