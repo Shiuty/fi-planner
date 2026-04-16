@@ -2,134 +2,108 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNTH Finance - FI Planner</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="dashboard.css" />
-    <link rel="stylesheet" href="../../style.css" />
-    <link rel="stylesheet" href="../../Home/home.css" />
   </head>
-  <script>
-    function goBack() {
-      window.history.back();
-    }
-  </script>
-  <body>
-    <div class="container">
-      <!-- SIDEBAR -->
-      <div class="sidebar">
-        <div class="logo">
-          <img src="../images/logo.png" />
-          <h2>FI Planner</h2>
+  <body class="min-h-screen flex">
+    <main class="flex-1 p-4 md:p-10 overflow-y-auto">
+      <header class="flex justify-between items-center mb-10">
+        <div class="flex items-center space-x-4">
+          <img src="../images/logo.png" class="h-10 w-auto" alt="Logo" />
+          <h2 class="text-3xl font-bold text-gray-800">Dashboard</h2>
+        </div>
+      </header>
+
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div class="card text-center">
+          <span class="text-gray-400 text-sm mb-2 block">🏦 Thu nhập</span>
+          <span class="text-2xl font-bold mono">20,000,000 VND</span>
+        </div>
+        <div class="card text-center">
+          <span class="text-gray-400 text-sm mb-2 block">🛒 Chi tiêu</span>
+          <span class="text-2xl font-bold mono">8,500,000 VND</span>
+        </div>
+        <div class="card text-center border-red-100">
+          <span class="text-gray-400 text-sm mb-2 block">💳 Nợ</span>
+          <span class="text-2xl font-bold mono text-red-500"
+            >15,234,000 VND</span
+          >
+        </div>
+      </section>
+
+      <section class="card mb-10">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl font-bold text-gray-800">
+            Tiến độ FI: <span class="text-green-500 italic">35%</span>
+          </h3>
+          <span class="text-gray-400 text-sm mono">51,234,000 VND</span>
         </div>
 
-        <ul class="menu">
-          <li class="active">
-            <a href="dashboard.html">
-              <img src="../images/icons8-home-64.png" />
-              <span>Dashboard</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="fi.html">
-              <img src="../images/icons8-calendar-100.png" />
-              <span>Mục tiêu FI</span>
-            </a>
-          </li>
-
-          <li>
-            <img src="../images/icons8-briefcase-100 2.png" />
-            <span>Thu nhập</span>
-          </li>
-
-          <li>
-            <img src="../images/icons8-receipt-96.png" />
-            <span>Chi tiêu</span>
-          </li>
-
-          <li>
-            <img src="../images/iccons8-debt-642.png" />
-            <span>Nợ</span>
-          </li>
-        </ul>
-
-        <div class="user">
-          <button class="back-btn" onclick="goBack()">← Quay lại</button>
+        <div class="progress-container h-5 bg-gray-100 rounded-full mb-4">
+          <div
+            class="progress-bar bg-green-500 h-full rounded-full"
+            style="width: 35%"
+          ></div>
         </div>
-      </div>
-
-      <!-- MAIN -->
-      <div class="main">
-        <h2>Dashboard</h2>
-
-        <!-- SUMMARY -->
-        <div class="summary">
-          <div class="box">
-            <span>Thu nhập</span>
-            <h3>20,000,000 VND</h3>
-          </div>
-
-          <div class="box">
-            <span>Chi tiêu</span>
-            <h3>8,500,000 VND</h3>
-          </div>
-
-          <div class="box">
-            <span>Nợ</span>
-            <h3>15,234,000 VND</h3>
-          </div>
+        <div class="progress-container h-3 bg-gray-50 rounded-full mb-8">
+          <div
+            class="progress-bar bg-green-200 h-full rounded-full"
+            style="width: 20%"
+          ></div>
         </div>
 
-        <!-- CONTENT -->
-        <div class="dash-content">
-          <!-- LEFT -->
-          <div class="left">
-            <div class="progress-card">
-              <p>Tiến độ FI: <span class="green">35%</span></p>
-
-              <div class="bar">
-                <div class="fill"></div>
-              </div>
-
-              <div class="info-row">
-                <span>Thời gian đạt mục tiêu: 20/5/2030</span>
-                <span>Đã tiết kiệm: 5,126,000 / 1,800,000,000</span>
-              </div>
-            </div>
-
-            <div class="charts">
-              <div class="chart-box">Biểu đồ thu nhập</div>
-              <div class="chart-box">Dự đoán FI</div>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="text-gray-500">
+            <p>
+              Thời gian đạt mục tiêu:
+              <span class="text-gray-800 font-bold">20/5/2030</span>
+            </p>
+            <p>
+              Tiết kiệm mỗi tháng:
+              <span class="text-gray-800 font-bold">150,000 VND</span>
+            </p>
           </div>
-
-          <!-- RIGHT -->
-          <div class="right">
-            <h4>Giao dịch gần đây</h4>
-
-            <div class="transaction">
-              Lương <span class="plus">+20,000,000</span>
-            </div>
-            <div class="transaction">
-              Tiền thưởng <span class="plus">+5,000,000</span>
-            </div>
-            <div class="transaction">
-              Ăn uống <span class="minus">-1,500,000</span>
-            </div>
-            <div class="transaction">
-              Thu nợ <span class="minus">-3,000,000</span>
-            </div>
-            <div class="transaction">
-              Cổ tức <span class="plus">+5,000,000</span>
-            </div>
-            <div class="transaction">
-              Làm thêm <span class="plus">+1,500,000</span>
-            </div>
-            <div class="transaction">
-              Mua sắm <span class="minus">-1,800,000</span>
-            </div>
+          <div class="md:text-right text-gray-500">
+            <p class="italic">Đã tiết kiệm:</p>
+            <p class="text-lg font-bold mono text-gray-800">
+              5,126,000 / 1.800.000.000
+            </p>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+        <div class="card">
+          <h4 class="font-bold mb-6">Thu nhập & Chi tiêu</h4>
+          <div class="h-60"><canvas id="monthChart"></canvas></div>
+        </div>
+        <div class="card">
+          <h4 class="font-bold mb-6">Dự đoán mục tiêu FI</h4>
+          <div class="h-60"><canvas id="projectionChart"></canvas></div>
+        </div>
+        <div class="card">
+          <h4 class="font-bold mb-6">Giao dịch gần đây</h4>
+          <div
+            id="transaction-list"
+            class="transaction-list space-y-4 max-h-60 overflow-y-auto pr-2"
+          ></div>
+        </div>
+      </section>
+
+      <button class="mt-12 text-blue-400 font-medium" onclick="history.back()">
+        ← Quay lại
+      </button>
+    </main>
+
+    <script src="dashboard.js"></script>
   </body>
 </html>

@@ -2,108 +2,137 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Mục tiêu FI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mục tiêu FI - CNTH Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="fi.css" />
-    <link rel="stylesheet" href="../../style.css" />
-    <link rel="stylesheet" href="../../Home/home.css" />
   </head>
-  <script>
-    function goBack() {
-      window.history.back();
-    }
-  </script>
-  <body>
-    <div class="container">
-      <!-- SIDEBAR (giống dashboard) -->
-      <div class="sidebar">
-        <div class="logo">
-          <img src="../images/logo.png" />
-          <h2>FI Planner</h2>
+  <body class="p-4 md:p-8">
+    <header class="flex justify-between items-center mb-6">
+      <div class="flex items-center space-x-4">
+        <img src="../images/logo.png" class="h-12" alt="Logo" />
+        <h1 class="text-4xl font-bold text-gray-900">Mục tiêu FI</h1>
+      </div>
+      <button
+        class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-lg hover:bg-blue-700 transition"
+      >
+        + Thêm mục tiêu
+      </button>
+    </header>
+
+    <section
+      id="fi-banner"
+      class="fi-banner-card rounded-[40px] p-10 mb-8 relative overflow-hidden"
+    >
+      <div class="flex flex-col md:flex-row justify-between relative z-10">
+        <div class="flex-1">
+          <div class="flex items-center space-x-6 mb-4">
+            <div class="target-icon">🎯</div>
+            <h2 class="text-3xl font-bold">Tiến độ tiết kiệm</h2>
+          </div>
+
+          <div id="fi-main-stats"></div>
+
+          <div class="mt-8">
+            <div class="flex items-end space-x-4 mb-4">
+              <span class="text-4xl font-bold text-green-600"
+                ><span id="pct-text">36</span>%</span
+              >
+              <span class="text-2xl font-bold text-gray-700">mục tiêu</span>
+            </div>
+
+            <div class="relative w-full max-w-xl">
+              <div
+                class="flex h-6 w-full rounded-full overflow-hidden bg-gray-100 shadow-inner"
+              >
+                <div class="bg-green-500 w-[30%]"></div>
+                <div class="bg-red-500 w-[15%]"></div>
+                <div class="bg-blue-600 w-[20%]"></div>
+              </div>
+              <div
+                class="absolute -top-6 left-[36%] flex flex-col items-center"
+              >
+                <span class="text-blue-600 text-sm font-bold">hôm nay</span>
+                <div
+                  class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-blue-600"
+                ></div>
+              </div>
+            </div>
+
+            <div
+              class="flex space-x-6 mt-2 text-[10px] text-gray-500 leading-tight"
+            >
+              <p>màu xanh lá:<br />đúng tiến độ</p>
+              <p>màu đỏ:<br />chậm tiến độ</p>
+              <p>màu xanh dương:<br />vượt tiến độ</p>
+            </div>
+          </div>
+
+          <div class="mt-8 space-y-1 text-lg font-medium text-gray-800">
+            <p>
+              Số năm tự do tài chính sau khi nghỉ hưu:
+              <span id="retire-years">45</span> năm
+            </p>
+            <p>
+              Mục tiêu đạt tự do tài chính từ năm:
+              <span id="retire-year">2055</span> (ước tính)
+            </p>
+          </div>
         </div>
-        <div class="user">
-          <button class="back-btn" onclick="goBack()">← Quay lại</button>
+
+        <div class="hidden lg:block w-1/2">
+          <img
+            src="../../images/mucTieu.png"
+            class="w-[80%] object-contain mx-auto"
+            alt="Illustration"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 xl:grid-cols-5 gap-8">
+      <div class="xl:col-span-3 card">
+        <h3 class="text-2xl font-bold mb-6 leading-tight">
+          Sơ đồ dự kiến đạt mức tự do tài chính sau nghỉ hưu
+        </h3>
+        <div class="h-80">
+          <canvas id="fiTargetChart"></canvas>
         </div>
       </div>
 
-      <!-- MAIN -->
-      <div class="main">
-        <!-- HEADER -->
-        <div class="fi-header">
-          <h2>Mục tiêu FI</h2>
-          <button class="add-btn">+ Thêm mục tiêu</button>
-        </div>
-
-        <!-- CARD TOP -->
-        <div class="fi-card">
-          <div class="fi-left">
-            <img class="target" src="../images/target.png" />
-
-            <div>
-              <h3>Tiến độ tiết kiệm</h3>
-              <h1>24,567,000 VND</h1>
-              <p>/ 30,800,000,000 VND</p>
-
-              <div class="progress">
-                <div class="fill"></div>
-              </div>
-
-              <p class="percent">36% mục tiêu</p>
-
-              <p class="info">
-                Số năm tự do tài chính sau khi nghỉ hưu: 45 năm
-              </p>
-              <p class="info">
-                Mục tiêu đạt tự do tài chính từ năm: 2055 (ước tính)
-              </p>
-            </div>
-          </div>
-
-          <img class="img-right" src="../images/fi.png" />
-        </div>
-
-        <!-- CONTENT -->
-        <div class="fi-content">
-          <!-- LEFT LIST -->
-          <div class="fi-list">
-            <div class="item">
-              <span>🌴 Du lịch</span>
-              <div class="bar"><div style="width: 30%"></div></div>
-            </div>
-
-            <div class="item">
-              <span>🏠 Nhà cửa tiện ích</span>
-              <div class="bar"><div style="width: 50%"></div></div>
-            </div>
-
-            <div class="item">
-              <span>🏥 Y tế</span>
-              <div class="bar"><div style="width: 60%"></div></div>
-            </div>
-
-            <div class="item">
-              <span>🍱 Thực phẩm</span>
-              <div class="bar"><div style="width: 40%"></div></div>
-            </div>
-          </div>
-
-          <!-- RIGHT TABLE -->
-          <div class="fi-table">
-            <h4>Tổng chi phí tự do tài chính sau nghỉ hưu:</h4>
-
-            <p>Phí sinh hoạt thường ngày <span>500 triệu</span></p>
-            <p>Thực phẩm, ăn uống <span>900 triệu</span></p>
-            <p>Y tế <span>4 tỷ</span></p>
-            <p>Nhà cửa tiện ích <span>9 tỷ 5</span></p>
-            <p>Du lịch <span>15 tỷ</span></p>
-            <p>Chăm sóc cá nhân <span>250 triệu</span></p>
-            <p>Phát sinh <span>550 triệu</span></p>
-
-            <hr />
-
-            <p class="total">Tổng cộng <span>31 tỷ 4</span></p>
-          </div>
+      <div class="xl:col-span-2 card">
+        <h3 class="text-xl font-bold mb-6">
+          Tổng chi phí tự do tài chính sau nghỉ hưu:
+        </h3>
+        <div class="overflow-hidden">
+          <table class="w-full text-left">
+            <tbody
+              id="expense-table-body"
+              class="divide-y divide-gray-100"
+            ></tbody>
+            <tfoot>
+              <tr class="font-bold text-lg bg-gray-50">
+                <td class="py-4 px-2">Tổng cộng</td>
+                <td class="py-4 px-2 text-right" id="total-expense">31 tỷ 4</td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
       </div>
     </div>
+
+    <button
+      class="mt-8 text-blue-500 font-bold text-lg"
+      onclick="history.back()"
+    >
+      < Quay lại
+    </button>
+
+    <script src="FI.js"></script>
   </body>
 </html>

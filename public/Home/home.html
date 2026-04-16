@@ -10,6 +10,15 @@
     function goFIGoal() {
       window.location.href = "../FI Goal/fi.html";
     }
+    function goIcome() {
+      window.location.href = "../Icome/icome.html";
+    }
+    function goExpenses() {
+      window.location.href = "../Expenses/expenses.html";
+    }
+    function goDebt() {
+      window.location.href = "../Debt/debt.html";
+    }
   </script>
   <body>
     <div class="container">
@@ -36,18 +45,24 @@
           </li>
 
           <li>
-            <img src="../images/icons8-briefcase-100 2.png" />
-            <span>Thu nhập</span>
+            <a href="../Icome/icome.html">
+              <img src="../images/icons8-briefcase-100 2.png" />
+              <span>Thu nhập</span>
+            </a>
           </li>
 
           <li>
-            <img src="../images/icons8-receipt-96.png" />
-            <span>Chi tiêu</span>
+            <a href="../Expenses/expenses.html">
+              <img src="../images/icons8-receipt-96.png" />
+              <span>Chi tiêu</span>
+            </a>
           </li>
 
           <li>
-            <img src="../images/iccons8-debt-642.png" />
-            <span>Nợ</span>
+            <a href="../Debt/debt.html">
+              <img src="../images/iccons8-debt-642.png" />
+              <span>Nợ</span>
+            </a>
           </li>
         </ul>
 
@@ -86,7 +101,9 @@
               <h3>Thu nhập</h3>
               <h1>83,320,000 VND</h1>
               <p>Tổng thu nhập</p>
-              <button class="btn blue-btn">Xem chi tiết ></button>
+              <button class="btn blue-btn" onclick="goIcome()">
+                Xem chi tiết >
+              </button>
             </div>
             <img src="../images/icoming.png" />
           </div>
@@ -97,7 +114,9 @@
               <h3>Chi tiêu</h3>
               <h1>35,654,000 VND</h1>
               <p>Tổng chi tiêu tháng này</p>
-              <button class="btn purple-btn">Xem chi tiết ></button>
+              <button class="btn purple-btn" onclick="goExpenses()">
+                Xem chi tiết >
+              </button>
             </div>
             <img src="../images/expenses.png" />
           </div>
@@ -108,7 +127,9 @@
               <h3>Nợ</h3>
               <h1>15,234,000 VND</h1>
               <p>Tổng nợ</p>
-              <button class="btn red-btn">Xem chi tiết ></button>
+              <button class="btn red-btn" onclick="goDebt()">
+                Xem chi tiết >
+              </button>
             </div>
             <img src="../images/debt.jpg" />
           </div>
