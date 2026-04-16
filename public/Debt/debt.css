@@ -1,0 +1,18 @@
+body { font-family: 'Inter', sans-serif; }
+.mono { font-family: 'JetBrains Mono', monospace; letter-spacing: -1px; }
+
+/* Gradient Banner Tổng nợ: Đỏ cam sang Đỏ nhạt chuẩn mẫu */
+.debt-banner-gradient {
+    background: linear-gradient(to right, #f87171, #ef4444, #fee2e2);
+}
+
+/* Padding và định dạng bảng chuẩn xác */
+td {
+    padding: 1.5rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.text-payment-red {
+    color: #ef4444;
+}

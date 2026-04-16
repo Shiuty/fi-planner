@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý chi tiêu - CNTH Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="expenses.css" />
+  </head>
+  <body class="p-6 md:p-10 bg-[#f8fafc]">
+    <header
+      class="flex justify-between items-center mb-8 max-w-[1400px] mx-auto"
+    >
+      <div class="flex items-center space-x-4">
+        <img src="../../images/logo.png" class="h-10" alt="Logo" />
+        <h1 class="text-3xl font-bold text-gray-800">Quản lý chi tiêu</h1>
+      </div>
+      <button
+        class="bg-[#4f46e5] text-white px-6 py-2.5 rounded-xl font-bold shadow-md hover:bg-[#4338ca] transition"
+      >
+        + Thêm chi tiêu
+      </button>
+    </header>
+
+    <main class="max-w-[1400px] mx-auto space-y-8">
+      <div
+        class="expense-banner-gradient rounded-[32px] p-10 flex items-center shadow-lg relative overflow-hidden"
+      >
+        <div class="bg-blue-600/20 p-6 rounded-3xl mr-8">
+          <img src="../../images/icon-debt.png" class="h-16" alt="Icon" />
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-white/90">
+            Tổng chi tiêu tháng này:
+          </h2>
+          <p
+            class="text-5xl font-bold text-white mt-2 mono"
+            id="total-month-display"
+          >
+            0 VND
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 expense-card"
+          id="card-food"
+        >
+          <div class="flex items-center mb-6">
+            <img src="../../images/iftar.png" class="h-12 mr-4" alt="Food" />
+            <div class="flex flex-col">
+              <span class="font-bold text-gray-800 text-lg">Ăn uống</span>
+              <div class="flex items-baseline space-x-2">
+                <span class="text-2xl font-bold current-val" id="food-spent"
+                  >-0 VND</span
+                >
+                <span class="text-sm text-gray-400"
+                  >/ <span id="food-budget">0</span></span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-full bg-gray-100 h-4 rounded-full overflow-hidden mb-3 shadow-inner"
+          >
+            <div
+              id="food-bar"
+              class="h-full transition-all duration-700 ease-in-out"
+              style="width: 0%"
+            ></div>
+          </div>
+          <div class="flex justify-between items-center">
+            <span id="food-status" class="text-xs font-bold italic"></span>
+            <span
+              id="food-percent"
+              class="text-xs font-mono font-bold text-gray-400"
+              >0%</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 expense-card"
+          id="card-shopping"
+        >
+          <div class="flex items-center mb-6">
+            <img src="../../images/trolley.png" class="h-12 mr-4" alt="Shop" />
+            <div class="flex flex-col">
+              <span class="font-bold text-gray-800 text-lg">Mua sắm</span>
+              <div class="flex items-baseline space-x-2">
+                <span class="text-2xl font-bold current-val" id="shopping-spent"
+                  >-0 VND</span
+                >
+                <span class="text-sm text-gray-400"
+                  >/ <span id="shopping-budget">0</span></span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-full bg-gray-100 h-4 rounded-full overflow-hidden mb-3 shadow-inner"
+          >
+            <div
+              id="shopping-bar"
+              class="h-full transition-all duration-700 ease-in-out"
+              style="width: 0%"
+            ></div>
+          </div>
+          <div class="flex justify-between items-center">
+            <span id="shopping-status" class="text-xs font-bold italic"></span>
+            <span
+              id="shopping-percent"
+              class="text-xs font-mono font-bold text-gray-400"
+              >0%</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="bg-white p-8 rounded-[32px] shadow-sm border border-gray-100 expense-card"
+          id="card-others"
+        >
+          <div class="flex items-center mb-6">
+            <img
+              src="../../images/shopping-bag.png"
+              class="h-12 mr-4"
+              alt="Other"
+            />
+            <div class="flex flex-col">
+              <span class="font-bold text-gray-800 text-lg">Khác</span>
+              <div class="flex items-baseline space-x-2">
+                <span class="text-2xl font-bold current-val" id="others-spent"
+                  >-0 VND</span
+                >
+                <span class="text-sm text-gray-400"
+                  >/ <span id="others-budget">0</span></span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-full bg-gray-100 h-4 rounded-full overflow-hidden mb-3 shadow-inner"
+          >
+            <div
+              id="others-bar"
+              class="h-full transition-all duration-700 ease-in-out"
+              style="width: 0%"
+            ></div>
+          </div>
+          <div class="flex justify-between items-center">
+            <span id="others-status" class="text-xs font-bold italic"></span>
+            <span
+              id="others-percent"
+              class="text-xs font-mono font-bold text-gray-400"
+              >0%</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <section
+        class="bg-white rounded-[32px] shadow-sm border border-gray-100 overflow-hidden"
+      >
+        <div class="p-6 bg-gray-50/50 border-b border-gray-100">
+          <h3 class="text-xl font-bold text-gray-800">Chi tiêu gần đây</h3>
+        </div>
+        <table class="w-full text-left">
+          <tbody id="expense-history" class="divide-y divide-gray-100"></tbody>
+        </table>
+      </section>
+
+      <button class="text-blue-500 font-bold text-lg" onclick="history.back()">
+        < Quay lại
+      </button>
+    </main>
+
+    <script src="expenses.js"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý thu nhập - CNTH Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="icome.css" />
+  </head>
+  <body class="p-4 md:p-10 bg-[#f8fafc]">
+    <header
+      class="flex justify-between items-center mb-10 max-w-[1400px] mx-auto"
+    >
+      <div class="flex items-center space-x-4">
+        <img src="../../images/logo.png" class="h-12" alt="Logo" />
+        <h1 class="text-4xl font-bold text-gray-800">Quản lý thu nhập</h1>
+      </div>
+      <button
+        class="bg-[#4f46e5] text-white px-8 py-3 rounded-2xl font-bold shadow-lg hover:bg-[#4338ca]"
+      >
+        + Thêm thu nhập
+      </button>
+    </header>
+
+    <main class="max-w-[1400px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10">
+        <div class="lg:col-span-8 space-y-6">
+          <div
+            class="income-purple-card rounded-[40px] p-10 flex items-center shadow-sm"
+          >
+            <div class="bg-blue-200/50 p-6 rounded-3xl mr-8">
+              <img
+                src="../../images/wallet.png"
+                class="h-16 w-auto"
+                alt="Wallet"
+              />
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-gray-700">Tổng thu nhập</h2>
+              <p
+                class="text-5xl font-bold text-gray-900 mt-2 mono"
+                id="total-all-time"
+              >
+                55,840,000 VND
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-[40px] p-10 shadow-sm border border-gray-100"
+          >
+            <div class="flex items-center mb-10">
+              <div
+                class="bg-gray-50 p-4 rounded-2xl mr-6 shadow-inner flex items-center justify-center w-24 h-24"
+              >
+                <img
+                  src="../../images/icons8-briefcase-100 2.png"
+                  class="w-16 h-16 object-contain"
+                  alt="Salary Icon"
+                />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">
+                  Tiền lương cố định
+                </h3>
+                <p class="text-3xl font-bold text-gray-900">
+                  <span id="salary-fixed">30,000,000</span> VND / tháng
+                </p>
+                <p class="text-red-500 text-sm mt-1 italic">
+                  (nếu sau này lương thay đổi tự động thay đổi mức lương cố định
+                  ở đây)
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center">
+              <div
+                class="bg-gray-50 p-4 rounded-2xl mr-6 shadow-inner flex items-center justify-center w-24 h-24"
+              >
+                <img
+                  src="../../images/laptop.png"
+                  class="w-16 h-16 object-contain"
+                  alt="Extra Income Icon"
+                />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-800">Tiền làm thêm</h3>
+                <p class="text-3xl font-bold text-gray-900">
+                  Tổng: <span id="extra-income-total">3,730,000</span> VND
+                </p>
+                <p class="text-red-500 text-sm mt-1 italic">
+                  (Tính tổng tiền thưởng và làm thêm)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col space-y-6">
+          <div
+            class="illustration-box shadow-2xl rounded-[40px] overflow-hidden border-4 border-white z-10"
+          >
+            <img
+              src="../../images/icoming.png"
+              class="w-full h-auto"
+              alt="Illustration"
+            />
+          </div>
+
+          <div
+            class="bg-white rounded-[32px] p-8 shadow-sm border border-gray-100 text-center"
+          >
+            <h4 class="text-xl font-bold text-gray-500">
+              Tổng thu nhập tháng này:
+            </h4>
+            <p
+              class="text-3xl font-bold text-gray-900 mt-2 mono"
+              id="current-month-income"
+            >
+              33,740,000 VND
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section
+        class="bg-white rounded-[40px] p-10 shadow-sm border border-gray-100 mb-10"
+      >
+        <h3 class="text-2xl font-bold mb-8 text-gray-800">Thu nhập gần đây</h3>
+        <table class="w-full border-collapse">
+          <tbody
+            id="recent-income-list"
+            class="divide-y divide-gray-100"
+          ></tbody>
+        </table>
+      </section>
+
+      <a
+        href="#"
+        class="text-blue-500 font-bold text-xl hover:underline"
+        onclick="history.back()"
+        >< Quay lại</a
+      >
+    </main>
+
+    <script src="icome.js"></script>
+  </body>
+</html>

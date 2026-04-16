@@ -1,0 +1,21 @@
+body { font-family: 'Inter', sans-serif; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Gradient banner chi tiêu chuẩn mẫu */
+.expense-banner-gradient {
+    background: linear-gradient(to right, #00008b, #6366f1, #c7d2fe);
+}
+
+/* Kiểu bảng chi tiêu */
+td {
+    padding: 1.25rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.text-expense-red { color: #ef4444; }
+
+/* Hiệu ứng glow nhẹ cho thanh bar */
+.bar-glow-red { shadow: 0 0 10px rgba(239,68,68,0.4); }
+.bar-glow-yellow { shadow: 0 0 10px rgba(250,204,21,0.4); }
+.bar-glow-green { shadow: 0 0 10px rgba(34,197,94,0.4); }

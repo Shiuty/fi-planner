@@ -1,0 +1,23 @@
+body { font-family: 'Inter', sans-serif; }
+
+.mono { font-family: 'JetBrains Mono', monospace; letter-spacing: -1px; }
+
+/* Gradient chuẩn từ tím đậm sang nhạt */
+.income-purple-card {
+    background: linear-gradient(135deg, #cbd5e1 0%, #dbd5ff 50%, #e9d5ff 100%);
+}
+
+/* Xử lý ảnh minh họa đè lên nhưng không che thẻ phía dưới */
+@media (min-width: 1024px) {
+    .illustration-box {
+        margin-left: -20%; /* Đẩy ảnh sang trái để đè lên khung thông tin */
+        width: 120%;      /* Mở rộng chiều rộng để tạo hiệu ứng nổi bật */
+    }
+}
+
+.income-green {
+    color: #5bbd82;
+    font-weight: 700;
+}
+
+td { padding: 1.5rem 0.5rem; font-size: 1.5rem; }
