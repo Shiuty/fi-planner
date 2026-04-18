@@ -4,6 +4,8 @@ body { font-family: 'Inter', sans-serif; }
 /* Gradient banner chi tiêu chuẩn mẫu */
 .expense-banner-gradient {
     background: linear-gradient(to right, #00008b, #6366f1, #c7d2fe);
+    position: relative;
+    z-index: 1;
 }
 
 /* Kiểu bảng chi tiêu */

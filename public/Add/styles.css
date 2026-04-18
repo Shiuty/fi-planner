@@ -1,0 +1,18 @@
+/* Tùy chỉnh mũi tên của Select box */
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23333'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 1.5rem;
+}
+
+/* Ẩn icon lịch mặc định để đồng nhất giao diện (tùy chọn) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.5);
+}
+
+.modal-overlay {
+    z-index: 9999 !important; 
+    display: flex;
+}

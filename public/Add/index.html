@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ thống Quản lý Tài chính - CNTH Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-gray-200 flex flex-col items-center justify-center min-h-screen space-y-4"
+  >
+    <button
+      onclick="openModal('modal-expense')"
+      class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold"
+    >
+      Thêm Chi Tiêu
+    </button>
+    <button
+      onclick="openModal('modal-income')"
+      class="bg-green-600 text-white px-6 py-3 rounded-xl font-bold"
+    >
+      Thêm Thu Nhập
+    </button>
+    <button
+      onclick="openModal('modal-debt')"
+      class="bg-red-600 text-white px-6 py-3 rounded-xl font-bold"
+    >
+      Quản lý Nợ
+    </button>
+
+    <div
+      id="modal-expense"
+      class="modal-overlay hidden fixed inset-0 bg-black/30 flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-[#f8fafc] w-full max-w-2xl rounded-[32px] p-10 shadow-2xl relative border border-gray-100"
+      >
+        <button
+          class="absolute top-6 right-8 text-red-400 hover:text-red-600"
+          onclick="closeModal('modal-expense')"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png"
+            class="h-8 w-8"
+            alt="close"
+          />
+        </button>
+        <h1 class="text-5xl font-bold text-center text-gray-900 mb-10">
+          Quản lý chi tiêu
+        </h1>
+        <form class="finance-form space-y-6">
+          <select
+            class="w-full px-6 py-4 text-xl rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none bg-white"
+          >
+            <option value="" disabled selected>Chọn mục chi tiêu</option>
+            <option value="eating">Ăn uống</option>
+            <option value="shopping">Mua sắm</option>
+            <option value="others">Các khoản chi tiêu khác</option>
+          </select>
+          <div class="flex">
+            <input
+              type="text"
+              placeholder="Nhập số tiền"
+              class="amount-input w-full px-6 py-4 text-xl rounded-l-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <div
+              class="bg-gray-50 px-6 py-4 border border-l-0 border-gray-300 rounded-r-2xl text-gray-400 text-xl"
+            >
+              VND
+            </div>
+          </div>
+          <input
+            type="date"
+            class="date-input w-full px-6 py-4 text-xl rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 uppercase"
+          />
+          <div class="flex justify-center pt-4">
+            <button
+              type="submit"
+              class="bg-[#4f7bff] text-white px-16 py-3 rounded-xl text-xl font-bold shadow-lg hover:bg-[#3b66f5]"
+            >
+              Thêm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      id="modal-income"
+      class="modal-overlay hidden fixed inset-0 bg-black/30 flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-[#f8fafc] w-full max-w-2xl rounded-[32px] p-10 shadow-2xl relative border border-gray-100"
+      >
+        <button
+          class="absolute top-6 right-8 text-red-400 hover:text-red-600"
+          onclick="closeModal('modal-income')"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png"
+            class="h-8 w-8"
+            alt="close"
+          />
+        </button>
+        <h1 class="text-5xl font-bold text-center text-gray-900 mb-10">
+          Quản lý thu nhập
+        </h1>
+        <form class="finance-form space-y-6">
+          <select
+            class="w-full px-6 py-4 text-xl rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none bg-white"
+          >
+            <option value="" disabled selected>Chọn mục thu nhập</option>
+            <option value="salary">Lương cố định</option>
+            <option value="freelance">Làm thêm</option>
+          </select>
+          <div class="flex">
+            <input
+              type="text"
+              placeholder="Nhập số tiền"
+              class="amount-input w-full px-6 py-4 text-xl rounded-l-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <div
+              class="bg-gray-50 px-6 py-4 border border-l-0 border-gray-300 rounded-r-2xl text-gray-400 text-xl"
+            >
+              VND
+            </div>
+          </div>
+          <div class="flex justify-center pt-4">
+            <button
+              type="submit"
+              class="bg-[#4f7bff] text-white px-16 py-3 rounded-xl text-xl font-bold shadow-lg hover:bg-[#3b66f5]"
+            >
+              Thêm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      id="modal-debt"
+      class="modal-overlay hidden fixed inset-0 bg-black/30 flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-[#f8fafc] w-full max-w-2xl rounded-[32px] p-10 shadow-2xl relative border border-gray-100"
+      >
+        <button
+          class="absolute top-6 right-8 text-red-400 hover:text-red-600"
+          onclick="closeModal('modal-debt')"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png"
+            class="h-8 w-8"
+            alt="close"
+          />
+        </button>
+        <h1 class="text-5xl font-bold text-center text-gray-900 mb-10">
+          Quản lý nợ
+        </h1>
+        <form class="finance-form space-y-6">
+          <select
+            class="w-full px-6 py-4 text-xl rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none bg-white"
+          >
+            <option value="" disabled selected>Thanh toán/ Thêm nợ</option>
+            <option value="pay">Thanh toán</option>
+            <option value="add">Thêm nợ</option>
+          </select>
+          <select
+            class="w-full px-6 py-4 text-xl rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none bg-white"
+          >
+            <option value="" disabled selected>Khoản vay/ Tín dụng</option>
+            <option value="loan">Khoản vay</option>
+            <option value="credit">Tín dụng</option>
+          </select>
+          <div class="flex">
+            <input
+              type="text"
+              placeholder="Nhập số tiền"
+              class="amount-input w-full px-6 py-4 text-xl rounded-l-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <div
+              class="bg-gray-50 px-6 py-4 border border-l-0 border-gray-300 rounded-r-2xl text-gray-400 text-xl"
+            >
+              VND
+            </div>
+          </div>
+          <div class="flex justify-center pt-4">
+            <button
+              type="submit"
+              class="bg-[#4f7bff] text-white px-16 py-3 rounded-xl text-xl font-bold shadow-lg hover:bg-[#3b66f5]"
+            >
+              Thêm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -27,4 +27,4 @@ function init() {
     `).join('');
 }
 
-window.onload = init;
+document.addEventListener('DOMContentLoaded', init);

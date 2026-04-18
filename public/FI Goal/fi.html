@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="fi.css" />
+    <link rel="stylesheet" href="../Add/styles.css" />
   </head>
   <body class="p-4 md:p-8">
     <header class="flex justify-between items-center mb-6">
@@ -20,9 +21,67 @@
       </div>
       <button
         class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-lg hover:bg-blue-700 transition"
+        onclick="openModal('goal-modal')"
       >
         + Thêm mục tiêu
       </button>
+      <div
+        id="goal-modal"
+        class="modal-overlay hidden fixed inset-0 bg-black/40 items-center justify-center p-4"
+      >
+        <div
+          class="bg-[#f8fafc] w-full max-w-2xl rounded-[32px] p-10 shadow-2xl relative border border-gray-100"
+        >
+          <button
+            class="absolute top-6 right-8 text-red-400 hover:text-red-600 transition-colors"
+            onclick="closeModal('goal-modal')"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png"
+              class="h-8 w-8"
+              alt="close"
+            />
+          </button>
+
+          <h1 class="text-5xl font-bold text-center text-gray-900 mb-10">
+            Thêm mục tiêu FI
+          </h1>
+
+          <form class="finance-form space-y-6">
+            <div class="space-y-2">
+              <input
+                type="text"
+                placeholder="Nhập tên mục tiêu"
+                class="w-full px-6 py-4 text-xl rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex">
+                <input
+                  type="text"
+                  placeholder="Nhập số tiền"
+                  class="amount-input w-full px-6 py-4 text-xl rounded-l-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                />
+                <div
+                  class="bg-gray-100 px-6 py-4 border border-l-0 border-gray-300 rounded-r-2xl text-gray-500 text-xl font-bold"
+                >
+                  VND
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center pt-4">
+              <button
+                type="submit"
+                class="bg-[#4f7bff] text-white px-20 py-4 rounded-xl text-2xl font-bold shadow-lg hover:bg-[#3b66f5] active:scale-95 transition-all"
+              >
+                Thêm
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </header>
 
     <section
@@ -134,5 +193,6 @@
     </button>
 
     <script src="FI.js"></script>
+    <script src="../Add/script.js"></script>
   </body>
 </html>
