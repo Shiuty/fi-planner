@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cài đặt - CNTH Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="setting.css" />
+  </head>
+  <body
+    class="bg-gray-50 p-4 md:p-8 transition-colors duration-300 min-h-screen"
+    id="app-body"
+  >
+    <div class="topbar max-w-4xl mx-auto">
+      <h1
+        class="text-4xl font-bold text-center mb-2 text-gray-900 dark:text-white font-medium"
+      >
+        Settings
+      </h1>
+      <p class="text-center text-gray-500 mb-10 dark:text-gray-400">
+        Manage your account and preferences
+      </p>
+
+      <div
+        class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-sm mb-6 flex flex-col md:flex-row justify-between items-center border border-gray-100 dark:border-gray-700 gap-4"
+      >
+        <div class="flex items-center space-x-4">
+          <div
+            class="h-16 w-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-3xl"
+          >
+            <img src="../images/avatar.png" />
+          </div>
+          <div>
+            <h2 class="text-xl font-bold dark:text-white">Nguyễn Văn A</h2>
+            <p class="text-gray-500 dark:text-gray-400">nguyenvana@gmail.com</p>
+          </div>
+        </div>
+        <button
+          class="bg-blue-500 text-white px-6 py-2 rounded-xl font-semibold hover:bg-blue-600 transition w-full md:w-auto"
+        >
+          Edit Profile
+        </button>
+      </div>
+
+      <div class="space-y-6">
+        <div
+          class="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border dark:border-gray-700 overflow-hidden"
+        >
+          <div
+            class="p-4 bg-gray-50 dark:bg-gray-700/50 border-b dark:border-gray-700 font-bold flex items-center dark:text-white"
+          >
+            <span class="mr-2">⚙️</span> Setting
+          </div>
+          <div class="p-6 space-y-6">
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >Language</span
+              >
+              <select
+                class="border rounded-lg px-4 py-2 dark:bg-gray-700 dark:text-white border-gray-200 dark:border-gray-600 outline-none"
+              >
+                <option>Vietnamese</option>
+                <option>English</option>
+              </select>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >Dark Mode</span
+              >
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="dark-mode-toggle"
+                  class="sr-only peer"
+                />
+                <div
+                  class="w-14 h-7 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full peer-checked:bg-green-500 after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all"
+                ></div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border dark:border-gray-700 overflow-hidden"
+        >
+          <div
+            class="p-4 bg-gray-50 dark:bg-gray-700/50 border-b dark:border-gray-700 font-bold flex items-center dark:text-white"
+          >
+            <span class="mr-2">💰</span> Financial Settings
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700 dark:text-gray-300">Currency</span>
+              <select
+                class="border rounded-lg px-4 py-2 dark:bg-gray-700 dark:text-white dark:border-gray-600"
+              >
+                <option>VND</option>
+              </select>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700 dark:text-gray-300"
+                >Monthly Saving</span
+              >
+              <span class="font-bold dark:text-white">50,000,000 VND</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border dark:border-gray-700 overflow-hidden"
+        >
+          <div
+            class="p-4 bg-gray-50 dark:bg-gray-700/50 border-b dark:border-gray-700 font-bold flex items-center dark:text-white"
+          >
+            <span class="mr-2">🔒</span> Security
+          </div>
+          <div class="p-6 space-y-6">
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >Change Password</span
+              >
+              <button
+                onclick="openModal('password-modal')"
+                class="bg-blue-500 text-white px-8 py-2 rounded-xl hover:bg-blue-600 transition"
+              >
+                Update
+              </button>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700 dark:text-gray-300 font-medium"
+                >Logout</span
+              >
+              <button
+                type="button"
+                onclick="Logout()"
+                class="bg-blue-400 text-white px-8 py-2 rounded-xl hover:bg-red-500 transition"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="mt-8 text-blue-500 font-bold text-lg"
+        onclick="history.back()"
+      >
+        < Quay lại
+      </button>
+    </div>
+
+    <div
+      id="password-modal"
+      class="modal-overlay hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-[9999]"
+    >
+      <div
+        class="bg-white dark:bg-gray-800 w-full max-w-md rounded-[32px] p-8 shadow-2xl relative border border-gray-100 dark:border-gray-700"
+      >
+        <h3 class="text-2xl font-bold mb-6 text-center dark:text-white">
+          Update Password
+        </h3>
+        <form class="finance-form space-y-4" id="pw-form">
+          <input
+            type="password"
+            placeholder="Mật khẩu cũ"
+            class="w-full px-6 py-4 rounded-2xl border dark:bg-gray-700 dark:text-white dark:border-gray-600 outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="password"
+            placeholder="Mật khẩu mới"
+            class="w-full px-6 py-4 rounded-2xl border dark:bg-gray-700 dark:text-white dark:border-gray-600 outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <div class="flex space-x-3 pt-4">
+            <button
+              type="button"
+              onclick="closeModal('password-modal')"
+              class="flex-1 py-3 border rounded-xl dark:text-gray-300 dark:border-gray-600"
+            >
+              Hủy
+            </button>
+            <button
+              type="submit"
+              class="flex-1 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-600 transition"
+            >
+              Lưu
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="setting.js"></script>
+  </body>
+</html>
